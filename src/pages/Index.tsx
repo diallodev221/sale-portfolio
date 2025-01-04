@@ -1,23 +1,22 @@
-import { useState } from "react";
-import { NoteSidebar } from "@/components/NoteSidebar";
-import { NoteEditor } from "@/components/NoteEditor";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Projects } from "@/components/portfolio/Projects";
+import { Skills } from "@/components/portfolio/Skills";
+import { Contact } from "@/components/portfolio/Contact";
+import { Navigation } from "@/components/portfolio/Navigation";
 
 const Index = () => {
-  const [content, setContent] = useState("# Welcome to your notes\n\nStart writing in Markdown!");
-
   return (
-    <SidebarProvider>
-      <div className="min-h-screen flex w-full">
-        <NoteSidebar />
-        <main className="flex-1 p-4">
-          <div className="mb-4">
-            <SidebarTrigger />
-          </div>
-          <NoteEditor content={content} onChange={setContent} />
-        </main>
-      </div>
-    </SidebarProvider>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      <Navigation />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+    </div>
   );
 };
 
